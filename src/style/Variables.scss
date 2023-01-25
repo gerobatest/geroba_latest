@@ -1,0 +1,85 @@
+//Couleurs
+$black: #1D1D1B;
+$blackfilter: rgb(61, 58, 58);
+$orange:#F15a22;
+$grey:#6F6F6E;
+$btngrey:#B1B1B1;
+$shadowgrey: rgb(209, 204, 204);
+$footergrey: #A8A8A7;
+$sectiongreybg: #E3E3E3;
+$btngreen:#008D36;
+$mapbg: rgb(184, 208, 184);
+$white: #fff;
+$Segoe: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+//espace entre paragraphes 
+$lineheightSm:20px; 
+$lineheightMd:22px;
+$lineheightLg:24px;
+$lineheightXl:34px;
+$lineheightXxl: 48px;
+
+//Dimension titre pour chaque type d'écran
+$titleXxl: 65px;
+$titleXl:60px;
+$titleLg: 50px;
+$titleMd: 35px;
+$titleSm: 30px; 
+
+//Dimension text
+$fontsizeSm: 14px; //Mobile
+$fontsizeMd: 15px; //iPad Air
+$fontsizeLg: 15px; //Desktop
+$fontsizeXl: 20px; //Large screens 
+$fontsizeXxl: 28px;
+
+$paddingSectionLg: 70px;
+
+//bar de navigation 
+$header-height: 55px;
+$headerXl: 80px;
+$headerXxl: 160px;
+
+$navSliderXxl:  80vh;
+
+$footerLg: 680px;
+$footerXl: 990px;
+$footerXxl: 1120px;
+
+// Media Query : Responsive
+//Phone
+@mixin mediaXs{
+    @media screen and (max-width:576px){
+        @content;
+    }
+}
+//Portrait tablets & Large phones
+@mixin mediaSm {
+    @media screen and (min-width: 577px) and (max-width: 768px){
+      @content;
+    }
+}
+//Tablette & Large phones
+@mixin mediaMd {
+    @media screen and (min-width: 768.05px) and (max-width: 992px) {
+        @content;
+    }
+}
+//Desktop 
+@mixin mediaLg{
+    @media screen and (min-width: 992.05px) and (max-width: 1366px) {
+        @content;
+    }
+}
+//Widescreen 
+@mixin mediaXl {
+    @media screen and (min-width: 1366.05px) and (max-width: 2559px){
+        @content;
+    }
+}
+//4K
+@mixin mediaXxl {
+    @media screen and (min-width: 2559.05px) {
+        @content;
+    }
+}

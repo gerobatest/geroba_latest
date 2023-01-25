@@ -1,0 +1,1 @@
+export const url_api = "https://admin.geroba.fr";

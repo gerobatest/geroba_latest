@@ -1,0 +1,159 @@
+@import 'Variables.scss';
+@import 'Commun.scss';
+
+.sectionContainer{
+    margin-top: $paddingSectionLg;
+    display:flex;
+    .sectionImage{
+        display: flex;
+        align-items: center;
+        width:50%;
+        overflow:hidden; 
+
+        div{
+            height: 100%;
+            object-fit: contain; 
+        }
+        img{
+            width: auto;
+            height:100%;
+        }
+    }
+    .sectionText{
+        padding: 0 3%;
+        width:50%;
+        .paragraph{
+            margin-top: $fontsizeLg;
+        }
+        li{
+            font-size: $fontsizeLg;
+            color: $grey;
+            line-height:$lineheightLg;
+            margin-left:17px !important;
+
+            .openFonc{
+                text-decoration: none;
+                color: $orange;     
+            }
+            .openFonc:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+
+//Téléchargement
+.container-telechargement{ 
+    margin-top: $paddingSectionLg !important;
+    padding-top: 20px;
+    background: $sectiongreybg;
+    .titleTelechargement{
+        padding-left:3%;
+    }
+}
+
+
+//Responsive
+//Phone: mobile 
+@include mediaXs{
+    .sectionContainer{
+        display:block;
+        .sectionImage{
+            img{
+                transform: scale(0.7);
+            }
+        }
+        .sectionText, .sectionImage{
+            width:100%;
+        } 
+        .sectionText{
+            padding: 0 8px;
+            li{
+                font-size: $fontsizeSm;
+                line-height: $lineheightSm; 
+            }
+        }
+    }
+    //Comment ça marche : image en dessus du texte
+    #about{
+        margin-top: 0; 
+        display:flex;
+        flex-direction: column;
+        .sectionImage{
+            order:1;
+        }
+        .sectionText{
+            order: 2;
+        }
+    }
+    #fonctions{
+        margin-top: 0px;
+    }
+    .container-telechargement{
+        .titleTelechargement{
+            padding-left:8px;
+        }
+        .sm-container{
+            display:block;
+            .sm-paragraph{
+                width: 100%;
+            }
+        }
+    }
+}
+
+@include mediaSm{
+    .sectionContainer{
+        .sectionText{
+            li{
+                font-size: $fontsizeSm;
+                line-height: $lineheightSm;
+            }
+        }
+        .sectionImage{
+            margin:auto;
+        }
+    }  
+}
+
+@include mediaMd{
+    .sectionContainer{
+        .sectionText{
+            width:50%; 
+            li{
+                font-size: $fontsizeMd;
+                line-height: $lineheightMd;
+            }
+        }
+        .sectionImage{
+            margin:auto;
+        }
+    } 
+}
+
+@include mediaXl{
+    .sectionContainer{
+        .sectionText{
+            li{
+                font-size: $fontsizeXl;
+                line-height: $lineheightXl;
+            }
+        }
+    } 
+}
+
+@include mediaXxl{
+    .sectionContainer{
+        .sectionText{
+            li{
+                font-size: $fontsizeXxl;
+                line-height: $lineheightXxl;
+            }
+        }
+        .sectionImage{
+            overflow: visible;
+        }      
+    }
+}

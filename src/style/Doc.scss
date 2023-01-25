@@ -1,0 +1,206 @@
+@import "Variables.scss";
+@import "Commun.scss";
+
+.scroll-container{
+    position:relative;
+    //margin:0px auto;
+    .scroll-up{
+        position:absolute;
+        top:10px;
+        right:10px;
+    }
+
+    .scroll-down{
+        position:absolute;
+        bottom:10px;
+        right:10px;
+    }
+
+    button{
+        z-index:9;
+        background:none;
+        border:none;
+        color:$white;
+        font-size:25px;
+    
+        &:hover{
+            background: $white;
+            color:$grey;
+        }
+    }
+}
+
+.doc-container{
+    display: flex;
+    flex-wrap: wrap;
+    height: 500px;
+    overflow:hidden;
+
+    .single-doc-container{
+        border: 0.5px solid $black;
+        height: 50%; 
+        width: 33.33%;
+        position: relative;
+        a{
+            position: absolute; 
+            top: 0; 
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+        &::after{
+            position: absolute;
+            content: "";
+            background: $blackfilter;
+            inset: 0;
+            mix-blend-mode: multiply;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit:fill;
+            -webkit-filter: grayscale(100%); 
+            filter: grayscale(100%);
+        }
+        .doc-name {
+            z-index: 9;
+            position:absolute;
+            width:100%;
+            text-align:center;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            color: $orange;
+        }
+        .download{
+            z-index: 9;
+            position: absolute; 
+            width: 100%;
+            text-align: center;
+            bottom: 20%;
+            color: $orange; 
+            font-size: 40px;
+        }
+        &:hover{
+            cursor: pointer;
+            .doc-name, .download{
+                font-weight: bold;
+                color: $white;
+            }
+            .download{
+                font-size: 50px;
+            }
+            img{
+                filter:none;
+            }
+        }
+        
+        &:hover::after{
+            position: absolute;
+            content: "";
+            background: $orange;
+            inset: 0;
+            mix-blend-mode: multiply;
+        }
+    }
+}
+
+.doc-container::-webkit-scrollbar {
+    display: none;
+}
+
+
+@include mediaXs{
+    .doc-container{
+        height:250px;
+        .single-doc-container{
+            width: 50%;
+            .download{
+                font-size: 30px;
+                bottom: 8%;
+            }
+            &:hover{
+                .download{
+                    font-size: 40px;
+                }
+            }
+        }
+    }
+}
+
+@include mediaSm{
+    .doc-container{
+        height:325px;
+        .single-doc-container{
+            height: 175px; 
+            width: 33.33%;
+            .download{
+                font-size: 35px;
+                bottom: 12%;
+            }
+            &:hover{
+                .download{
+                    font-size: 45px;
+                }
+            }
+        }
+    }
+}
+
+@include mediaMd{
+    .doc-container{
+        height:350px;
+        .single-doc-container{
+            height: 175px; 
+            width: 33.33%;
+            .download{
+                font-size: 35px;
+                bottom: 12%;
+            }
+            &:hover{
+                .download{
+                    font-size: 45px;
+                }
+            }
+        }
+    }
+}
+
+@include mediaXl{
+    .doc-container{
+        height:670px;
+        height: 80vh;
+        .single-doc-container{
+            .download{
+                font-size: 50px;
+                bottom: 18%;
+            }
+            &:hover{
+                .download{
+                    font-size: 60px;
+                }
+            }
+        }
+    }
+}
+
+@include mediaXxl{
+    .doc-container{
+        height:880px;
+        .single-doc-container{
+            .download{
+                font-size: 55px;
+                bottom: 18%;
+            }
+            &:hover{
+                .download{
+                    font-size: 65px;
+                }
+            }
+        }
+    }
+    button{
+        font-size:35px;
+    }
+}
